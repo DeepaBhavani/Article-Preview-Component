@@ -1,8 +1,7 @@
-alert("hello");
+  const shareBtn = document.getElementsByClassName('btn')[0];
+  const shareBox = document.getElementsByClassName('box')[0];
 
-//const shareBtn=document.getElementById("shareBtn");
-const shareBox=document.getElementById("shareBox");
+  shareBtn.addEventListener('click', () => {
+    shareBox.classList.toggle('active');
+  });
 
-shareBtn.addEventListener("click",()=>{
-    shareBox.classList.toggle("active");
-});//
