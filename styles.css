@@ -1,163 +1,121 @@
+*{
+  padding:0;
+  margin:0;
+}
+
 body{
-    background-color: hsl(210, 46%, 95%);
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
+  height:100vh;
+  width:100vw;
+  background-color:hsl(210, 46%, 95%);
+  display:flex;
+  align-items:center;
   justify-content: center;
-  align-items: center;
 }
 .con{
-    display:flex;
-    background-color: white;
-    border-radius: 3%;
-    width: 50%;
-    height:fit-content;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height:40%;
+  width:50%;
+  border-radius: 5%;
+  background-color: white;
+  box-sizing: content-box;
 }
-.main img{
-    width:100%;
-    height:100%;
-    object-fit: cover;
-    border-top-left-radius: 3%;
-    border-bottom-left-radius: 3%;
-    padding:0;
-    margin:0;
+.im img{
+  width:310px;
+  height:310px;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
 }
-h1{
-    font-size:large;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color:hsl(217, 19%, 35%);
-    padding-bottom: 5%;
-    line-height: 25px;
-    font-weight: bolder;
-}
-p{
-    font-size: small;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color:hsl(214, 17%, 51%);
-    padding-bottom:0%;
-    line-height: 20px;
-}
-.author-info img{
-    border-radius: 50%;
-    width:40px;
-    height:40px;
-    margin-top:5%;
-}
-.author-info{
-    display:flex;
-    align-items:center;
-    position:relative;
-}
-
-.ic{
-  background-color: hsl(210, 46%, 95%);
+.auth-im img{
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: 5%;
+  width:50px;
+  height:50px;
 }
-
-
-.ic img{
-    width:20px;
-    height:20px;
-    border-radius: 50%;
-}
-
-.text-content{
-    padding:3% 6%;
-}
-.author-details{
-    margin:5%;
-}
-.author-details p{
-    margin:0;
-    padding:0;
-}
-.author-name{
+.title{
+    font-weight: 700;
+    font-size:25px;
     color:hsl(217, 19%, 35%);
-    font-weight: bold;
+    margin-bottom: 5%;
 }
-.share-box{
-  display: none;
-  position: absolute;
-
-  bottom: 90%;             
-  left:70%;              
-
-  background-color: hsl(217, 19%, 35%);
-  padding: 12px 16px;
-  border-radius: 10px;
-  gap: 12px;
-  z-index: 100;
-  align-items: center;
-  width:150px;
-  height:20px;
-  justify-content: space-around;
+.auth{
+  display:flex;
 }
-
-
-.share-box.active{
-    display:flex;
+.desc{
+  color: hsl(214, 17%, 51%);
+  margin-bottom: 10%;
 }
-.share-box img{
-  width: 20px;
-  height: 20px;
+.name{
+  color:hsl(217, 19%, 35%);
+}
+.date{
+  color: hsl(214, 17%, 51%);
+}
+.txt{
+  padding:5%;
+}
+.auth-txt{
+  margin:10px;
+}
+button{
+  border-radius: 50%;
+  border:none;
+  width:30px;
+  height:30px;
   cursor: pointer;
 }
-
-.share-box::after{
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 8px 8px 0 8px;
-  border-style: solid;
-  border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+.btn{
+  margin-left:200%;
+  margin-top:10px;
+  cursor:pointer;
+}
+.box{
+  display:flex;
+  background-color:hsl(217, 19%, 35%);
+  width:200px;
+  height:35px;
+  border-radius: 5%;
+  align-items: center;
+  position:absolute;
+  justify-content: space-around;
+  top:55%;
+  display:none;
+  position:absolute;
+}
+.box img{
+  width:20px;
+  height:20px;
+}
+.box.active{
+  display:flex;
 }
 
-button{
-    border:none;
-    background-color: hsl(210, 46%, 95%);
-    cursor: pointer;
-    border-radius: 50%;
-}
+@media (max-width:375px){
 
-
-@media (max-width: 768px) {
-  .con {
-    display: block;          
-    width: 90%;             
+  body{
+    padding:5%;
+    margin:0;
   }
 
-  .main img {
-    width: 100%;
-    height: auto;         
-    border-top-left-radius: 3%;
-    border-bottom-left-radius: 0; 
-    border-top-right-radius: 3%;  /
+  .con{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:fit-content;
   }
-
-  .text-content {
-    padding: 4% 5%;
+  .im img{
+    border-radius: 5%;
   }
-
-  .author-details {
-    margin: 3% 0;
+  .box{
+    display:flex;
+    color:grey;
+    visibility:none;
+    display:none;
   }
-
-  .author-info {
-    flex-direction: row;      /* keep avatar + details + share in a row */
-    align-items: center;
+  .box.active{
+    display:flex;
   }
-
-  .share-box {
-    right: 5%;               /* adjust popup */
-    bottom: 120%;            /* still above the button */
+  .btn{
+      cursor:pointer;
   }
 }
